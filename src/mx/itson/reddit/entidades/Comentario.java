@@ -4,14 +4,21 @@
  */
 package mx.itson.reddit.entidades;
 
-import java.util.List;
-
 /**
  *
  * @author chiqu
  */
 public class Comentario {
 
+    public Comentario() {
+    }
+
+    public Comentario(Usuario usuario, String cuerpo, int puntos) {
+        this.usuario = usuario;
+        this.cuerpo = cuerpo;
+        this.puntos = puntos;
+    }
+    
     /**
      * @return the usuario
      */

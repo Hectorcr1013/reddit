@@ -12,6 +12,14 @@ import java.util.List;
  */
 public class Comunidad {
 
+    public Comunidad() {
+    }
+
+    public Comunidad(String nombre, Usuario usuarios) {
+        this.nombre = nombre;
+        this.usuarios = usuarios;
+    }
+    
     /**
      * @return the usuarios
      */

@@ -4,6 +4,8 @@
  */
 package mx.itson.reddit.ui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import mx.itson.reddit.entidades.*;
 
@@ -13,144 +15,149 @@ import mx.itson.reddit.entidades.*;
  */
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         
-        Usuario u = new Usuario();
-        Usuario u2 = new Usuario();
-        Usuario u3 = new Usuario();
-        Usuario u4 = new Usuario();
-        Usuario u5 = new Usuario();
-        Usuario u6 = new Usuario();
-        
-        Comunidad c = new Comunidad();
-        Comunidad c2 = new Comunidad();
-        Comunidad c3 = new Comunidad();
-        
-        Comentario comentario = new Comentario();
-        Comentario comentario2 = new Comentario();
-        Comentario comentario3 = new Comentario();
-        
-        Post p = new Post();
-        Post p2 = new Post();
-        Post p3 = new Post();
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
         
         //Datos usuarios
-        u.setNombre("PepitoDestroyer05");
-        u.setPais("Mexico");
-        u.setKarma(580);
-        u.setCorreo("pepitodes05@hotmail.com");
-        u.setPassword("Pepitoelmejor");
+        Usuario u = new Usuario("PepitoDestroyer05", 580, "pepitodes05@hotmail.com", "Pepitoelmejor", "Mexico");
         
-        u2.setNombre("Robertito87");
-        u2.setPais("Peru");
-        u2.setKarma(702);
-        u2.setCorreo("robertocarlos87@hotmail.com");
-        u2.setPassword("password");
+        Usuario u2 = new Usuario("Robertito87", 702, "robertocarlos87@hotmail.com", "password", "Peru");
         
-        u3.setNombre("PablitoElDelClavito");
-        u3.setPais("Mexico");
-        u3.setKarma(920);
-        u3.setCorreo("clavito2035@hotmail.com");
-        u3.setPassword("contrasena");
+        Usuario u3 = new Usuario("PablitoElDelClavito", 920, "clavito2035@hotmail.com", "contrasena", "Mexico");
         
-        u4.setNombre("eltortas48");
-        u5.setNombre("joseelpro");
-        u6.setNombre("NiteMex");
+        Usuario u4 = new Usuario("eltortas48");
+        Usuario u5 = new Usuario("joseelpro");
+        Usuario u6 = new Usuario("NiteMex");
+        Usuario u7 = new Usuario("Juicy");
+        Usuario u8 = new Usuario("Dilly_Dally");
+        Usuario u9 = new Usuario("Peep");
+        Usuario u10 = new Usuario("Gordo");
+        Usuario u11 = new Usuario("Chilli");
+        Usuario u12 = new Usuario("Boo_Boo");
+        Usuario u13 = new Usuario("First_Mate");
+        Usuario u14 = new Usuario("Pickle");
+        Usuario u15 = new Usuario("LuisGamer");
         
         //Datos comunidad
-        c.setNombre("buildapc");
-        c.setUsuarios(u);
+        Comunidad c = new Comunidad("buildapc", u);
         
-        c2.setNombre("programacion");
-        c2.setUsuarios(u2);
+        Comunidad c2 = new Comunidad("programacion", u2);
         
-        c3.setNombre("hoyaprendi");
-        c3.setUsuarios(u3);
+        Comunidad c3 = new Comunidad("hoyaprendi", u3);
         
         //Datos comentario
-        comentario.setUsuario(u4);
-        comentario.setPublicacion(p);
-        comentario.setPuntos(23);
-        comentario.setCuerpo("Lo he estado usando durante medio anio y ha sido genial."
-                + " La mayoría de las quejas que tuve se solucionaron con actualizaciones"
-                + " y no he encontrado ningún problema importante.");
         
-        comentario2.setUsuario(u5);
-        comentario2.setPublicacion(p2);
-        comentario2.setPuntos(68);
-        comentario2.setCuerpo("Primero que nada yo te diria que te hicieras"
+        Comentario com1 = new Comentario(u4, "Lo he estado usando durante medio anio y ha sido genial."
+                + " La mayoria de las quejas que tuve se solucionaron con actualizaciones"
+                + " y no he encontrado ningún problema importante.", 23);
+        
+        Comentario com2 = new Comentario(u5, "Primero que nada yo te diria que te hicieras"
                 + "la pregunta de hacia donde te quisieras encaminar en este "
                 + "mundo de la programacion y a partir de ahi haces una ruta "
-                + "de programacion, pero para empezar yo te recomendaria Python");
+                + "de programacion, pero para empezar yo te recomendaria Python", 68 );
         
-        comentario3.setUsuario(u6);
-        comentario3.setPublicacion(p3);
-        comentario3.setPuntos(5);
-        comentario3.setCuerpo("WhatsApp Business");
+        Comentario com3 = new Comentario(u6, "WhatsApp Business", 5);
+        
+        Comentario com4 = new Comentario(u7, "Por ahora siento que si es buena opcion instalarlo "
+                + "al principio siento que es cuando fallaba pero ahora no me falla nada", 19);
+        
+        Comentario com5 = new Comentario(u8, "Ya va bien", 16);
+        
+        Comentario com6 = new Comentario(u9, "Yo recien lo instale llevo una semana y no me ha fallado", 3);
+        
+        Comentario com7 = new Comentario(u10, "Python es de los mas generales y es facil de entender gracias a su sintaxis", 53);
+        
+        Comentario com9 = new Comentario(u11, "Entre Java y Pyhton son de los que te recomendaria para empezar", 43);
+        
+        Comentario com10 = new Comentario(u12, "Si quieres dedicarte al desarrollo web empieza por html, css, js y ve descubriendo frameworks", 80);
+        
+        Comentario com11 = new Comentario(u13, "Podrias programar uno pero eso ya sería más avanzado puedes empezar configurando en whatsapp business", 19);
+        
+        Comentario com12 = new Comentario(u14, "En tutoriales de youtube puedes encontrar muchos diferentes", 16);
+        
+        Comentario com8 = new Comentario(u15, "Depende para lo que necesites hay una variedad:) escribeme y te ayudo", 12);
         
         //Datos Post
-        p.setTitulo("Deberia instalar Windows 11?");
-        p.setContenido("He visto eso para actualizar a Windows 11 y es "
+        Date fecha = formato.parse("2022/09/24");
+        Post p = new Post("Deberia instalar Windows 11?", u, "He visto eso para actualizar a Windows 11 y es "
                 + "muy tentador, pero me han dicho que tiene errores "
-                + "y tiene un mal rendimiento, me pueden orientar?");
-        p.setUsuario(u);
-        Date fecha = new Date(2023,02,12,18,23);
-        p.setFecha(fecha);
-        p.setComunidad(c);
-        p.setPuntos(241);
-        p.setComentario(comentario);
+                + "y tiene un mal rendimiento, me pueden orientar?", 241, com1, fecha, c);
         
-        p2.setTitulo("Que lenguaje deberia de aprender primero?");
-        p2.setContenido("Acabo de empezar en este mundo de la programacion"
-                + "y no se que lenguaje empezar a estudiar primero, que me recomiendan?");
-        p2.setUsuario(u2);
-        Date fecha2 = new Date(2022,07,16,14,12);
-        p2.setFecha(fecha2);
-        p2.setComunidad(c2);
-        p2.setPuntos(455);
-        p2.setComentario(comentario2);
+        Date fecha2 = formato.parse("2022/05/28");
+        Post p2 = new Post("Que lenguaje deberia de aprender primero?", u2, "Acabo de empezar en este mundo de la programacion"
+                + "y no se que lenguaje empezar a estudiar primero, que me recomiendan?", 455, com2, fecha2, c2);
         
-        p3.setTitulo("Necesito recomendaciones de bots para comunicarme por whatsapp"
-                + " para los clientes de mi empresa.");
-        p3.setContenido("Alguien me recomendaría un buen Bot de whatsapp que "
-                + "le permita a los clientes de mi empresa comunicarse con la persona adecuada?");
-        p3.setUsuario(u3);
-        Date fecha3 = new Date(2022,11,26,20,28);
-        p3.setFecha(fecha3);
-        p3.setComunidad(c3);
-        p3.setPuntos(16);
-        p3.setComentario(comentario3);
-        
+        Date fecha3 = formato.parse("2022/06/20");
+        Post p3 = new Post("Necesito recomendaciones de bots para comunicarme por whatsapp"
+                + " para los clientes de mi empresa.", u3, "Alguien me recomendaría un buen Bot de whatsapp que "
+                + "le permita a los clientes de mi empresa comunicarse con la persona adecuada?", 16, com3, fecha3, c3);
         
         //Mostrado en consola
         System.out.println("-----------------------------------------------------------------------------------------------------");
-        System.out.println("      "+"r/" + c.getNombre() + "    *Publicado por u/" + u.getNombre() + p.getFecha() +"   "+ u.getPais());
+        System.out.println("      "+"r/" + c.getNombre() + "    *Publicado por u/" + u.getNombre()+" " + p.getFecha() +"   "+ u.getPais());
         System.out.println("  "+p.getPuntos()+"    ");
         System.out.println("      "+p.getTitulo() + "\n");
         System.out.println("      "+p.getContenido() + "\n");
-        System.out.println("                "+comentario.getUsuario().getNombre());
-        System.out.println("             "+comentario.getPuntos());
-        System.out.println("                " + comentario.getCuerpo());
+        System.out.println("                "+com1.getUsuario().getNombre()+ "      Hace 1mes");
+        System.out.println("             "+com1.getPuntos());
+        System.out.println("                " + com1.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com4.getUsuario().getNombre()+ "      Hace 3sem");
+        System.out.println("             "+com4.getPuntos());
+        System.out.println("                " + com4.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com5.getUsuario().getNombre()+ "      Hace 2sem");
+        System.out.println("             "+com5.getPuntos());
+        System.out.println("                " + com5.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com6.getUsuario().getNombre()+ "      Hace 3d");
+        System.out.println("             "+com6.getPuntos());
+        System.out.println("                " + com6.getCuerpo());
         System.out.println("-----------------------------------------------------------------------------------------------------\n");
         
         System.out.println("-----------------------------------------------------------------------------------------------------");
-        System.out.println("      "+"r/" + c2.getNombre() + "    *Publicado por u/" + u2.getNombre() + p2.getFecha() +"   "+ u2.getPais());
+        System.out.println("      "+"r/" + c2.getNombre() + "    *Publicado por u/" + u2.getNombre()+ " " + p2.getFecha() +"   "+ u2.getPais());
         System.out.println("  "+p2.getPuntos()+"    ");
         System.out.println("      "+p2.getTitulo() + "\n");
         System.out.println("      "+p2.getContenido() + "\n");
-        System.out.println("                "+comentario2.getUsuario().getNombre());
-        System.out.println("             "+comentario2.getPuntos());
-        System.out.println("                " + comentario2.getCuerpo());
+        System.out.println("                "+com2.getUsuario().getNombre()+ "      Hace 1mes");
+        System.out.println("             "+com2.getPuntos());
+        System.out.println("                " + com2.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com7.getUsuario().getNombre()+ "      Hace 1mes");
+        System.out.println("             "+com7.getPuntos());
+        System.out.println("                " + com7.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com8.getUsuario().getNombre()+ "      Hace 3sem");
+        System.out.println("             "+com8.getPuntos());
+        System.out.println("                " + com8.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com9.getUsuario().getNombre()+ "      Hace 6d");
+        System.out.println("             "+com9.getPuntos());
+        System.out.println("                " + com9.getCuerpo());
         System.out.println("-----------------------------------------------------------------------------------------------------\n");
     
         System.out.println("-----------------------------------------------------------------------------------------------------");
-        System.out.println("      "+"r/" + c3.getNombre() + "    *Publicado por u/" + u3.getNombre() + p3.getFecha() +"   "+ u3.getPais());
+        System.out.println("      "+"r/" + c3.getNombre() + "    *Publicado por u/" + u3.getNombre()+ " " + p3.getFecha() +"   "+ u3.getPais());
         System.out.println("  "+p3.getPuntos()+"    ");
         System.out.println("      "+p3.getTitulo() + "\n");
         System.out.println("      "+p3.getContenido() + "\n");
-        System.out.println("                "+comentario3.getUsuario().getNombre());
-        System.out.println("             "+comentario3.getPuntos());
-        System.out.println("                " + comentario3.getCuerpo());
+        System.out.println("                "+com3.getUsuario().getNombre()+ "      Hace 2mes");
+        System.out.println("             "+com3.getPuntos());
+        System.out.println("                " + com3.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com10.getUsuario().getNombre()+ "      Hace 1mes");
+        System.out.println("             "+com10.getPuntos());
+        System.out.println("                " + com10.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com11.getUsuario().getNombre()+ "      Hace 3sem");
+        System.out.println("             "+com11.getPuntos());
+        System.out.println("                " + com11.getCuerpo());
+        System.out.println("\n");
+        System.out.println("                "+com12.getUsuario().getNombre()+ "      Hace 1sem");
+        System.out.println("             "+com12.getPuntos());
+        System.out.println("                " + com12.getCuerpo());
         System.out.println("-----------------------------------------------------------------------------------------------------\n");
     
     }

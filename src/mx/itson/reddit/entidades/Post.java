@@ -4,8 +4,8 @@
  */
 package mx.itson.reddit.entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -13,6 +13,19 @@ import java.util.List;
  */
 public class Post {
 
+    public Post() {
+    }
+
+    public Post(String titulo, Usuario usuario, String contenido, int puntos, Comentario comentario, Date fecha, Comunidad comunidad) {
+        this.titulo = titulo;
+        this.usuario = usuario;
+        this.contenido = contenido;
+        this.puntos = puntos;
+        this.comentario = comentario;
+        this.fecha = fecha;
+        this.comunidad = comunidad;
+    }
+    
     /**
      * @return the comentario
      */

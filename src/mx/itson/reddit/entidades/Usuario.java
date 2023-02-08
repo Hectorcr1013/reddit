@@ -6,6 +6,21 @@ package mx.itson.reddit.entidades;
  */
 public class Usuario {
 
+    public Usuario() {
+    }
+
+    public Usuario(String nombre, int karma, String correo, String password, String pais) {
+        this.nombre = nombre;
+        this.karma = karma;
+        this.correo = correo;
+        this.password = password;
+        this.pais = pais;
+    }
+    
+    public Usuario(String nombre){
+        this.nombre = nombre;
+    }
+    
     /**
      * @return the nombre
      */
